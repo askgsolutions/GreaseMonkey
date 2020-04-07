@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="searchLocations()" placeholder="Search place" style="background-color: #ffa500;padding:20px;"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="searchLocations()" placeholder="Search Place" style="background-color: #ffa500;padding:20px;"></ion-searchbar>
   <ion-list [hidden]="autocompleteItems.length == 0">
     <ion-item *ngFor="let item of autocompleteItems" tappable (click)="getSearchResult(item)">
       {{ item.description }}
