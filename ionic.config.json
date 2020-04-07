@@ -1,5 +1,7 @@
 {
   "name": "greaseMonkey",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

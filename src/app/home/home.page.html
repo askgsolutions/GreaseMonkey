@@ -1,20 +1,17 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title style="padding-left:20px;">
+      <img alt="logo" id="header_logo" height="40" float-left src="../assets/imgs/text.png"> 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="searchLocations()" placeholder="Search place" style="background-color: #ffa500;padding:20px;"></ion-searchbar>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="getSearchResult(item)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list>
+  
 </ion-content>
