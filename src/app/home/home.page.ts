@@ -51,6 +51,7 @@ export class HomePage {
 
   getSearchResult(item){
     this.autocompleteItems = [];
+    this.autocomplete.input = item.description;
   
     this.geocoder.geocode({'placeId': item.place_id}, (results, status) => {
       if(status === 'OK' && results[0]){
@@ -70,6 +71,6 @@ export class HomePage {
         // })
       }
     })
-    console.log(this.autocompleteItems);
+    console.log(item);
   }
 }
