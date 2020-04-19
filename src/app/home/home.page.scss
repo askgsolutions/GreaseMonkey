@@ -1,14 +1,44 @@
-ion-toolbar {
+ion-header {
+  height: 150px;
   background: #ffa500;
+  // background: #ffa500 url("../../assets/imgs/clip-art.png") no-repeat fixed center;
+}
+
+ion-icon, ion-label {
+  color: #370600;
 }
 
 ion-header::after {
-  background-image: none;
-  border-bottom: none;
+  --background-image: none;
+  --border-bottom: none;
+}
+
+ion-content {
+  --background: #e8e8e8;
+}
+
+ion-toolbar, ion-tab-bar {
+  --background: transparent;
+  --border: transparent;
 }
 
 .header-align {
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+
+.searchbar-input {
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  color: #000 !important;
+}
+
+
+
+
+
+
+
+::-webkit-scrollbar{
+--display:none;
 }

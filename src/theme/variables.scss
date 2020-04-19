@@ -191,13 +191,13 @@
    */
 
   .md body {
-    --ion-background-color: #121212;
-    --ion-background-color-rgb: 18,18,18;
+    --ion-background-color: #e8e8e8;
+    --ion-background-color-rgb: 232, 232, 232;
 
-    --ion-text-color: #ffffff;
-    --ion-text-color-rgb: 255,255,255;
+    --ion-text-color: #370600;
+    --ion-text-color-rgb: 55,6,0;
 
-    --ion-border-color: #222222;
+    --ion-border-color: #ffa500;
 
     --ion-color-step-50: #1e1e1e;
     --ion-color-step-100: #2a2a2a;
@@ -219,11 +219,11 @@
     --ion-color-step-900: #e7e7e7;
     --ion-color-step-950: #f3f3f3;
 
-    --ion-item-background: #1e1e1e;
+    --ion-item-background: #ffa500;
 
-    --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-background: none;
 
-    --ion-tab-bar-background: #1f1f1f;
+    --ion-tab-bar-background: none;
   }
 
   ion-title.title-large {

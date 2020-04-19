@@ -1,25 +1,84 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title style="padding:5px 20px 20px 5px;">
+    <ion-buttons slot="start">
+    <button ion-button icon-only style="background: transparent;color:#370600;font-size: 30px;">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title style="padding:0px;">
       <div class="header-align">
-      <button ion-button icon-only style="background-color: #ffa500;color:#370600;font-size: 35px;" start>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <img alt="logo" id="header_logo" height="30" float-left src="../assets/imgs/text.png"> 
-      <button ion-button icon-only style="background-color: #ffa500;color:#370600;font-size: 35px;" end>
-        <ion-icon name="chat"></ion-icon>
-      </button>  
-    </div>
+      <img alt="logo" id="header-logo" height="30" float-left src="../assets/imgs/text.png"> 
+      </div>
     </ion-title>
+    <ion-buttons slot="end">
+    <button ion-button icon-only style="background: transparent;font-size: 30px;">
+      <ion-icon name="notifications"></ion-icon>
+    </button>  
+    </ion-buttons>
   </ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" translucent="true">
+      <ion-tab-button tab="schedule">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Schedule</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="speakers">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Speakers</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="map">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>Map</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="about">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="searchLocations()" placeholder="Search Place" style="background-color: #ffa500;padding:10px 15px 50px 15px;"></ion-searchbar>
-  <ion-list [hidden]="autocompleteItems.length == 0">
+  <ion-searchbar [(ngModel)]="searchInput.value" (ionInput)="searchLocations()" animated></ion-searchbar>
+  <!-- <ion-list [hidden]="autocompleteItems.length == 0">
     <ion-item *ngFor="let item of autocompleteItems" tappable (click)="getSearchResult(item)">
       {{ item.description }}
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+  <ion-card *ngFor="let item of searchResultItems">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../assets/imgs/marty-avatar.png">
+      </ion-avatar>
+      <h2>Marty McFly</h2>
+    </ion-item>
+    
+    <ion-card-content>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
   
 </ion-content>
